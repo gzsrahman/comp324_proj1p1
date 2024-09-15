@@ -10,5 +10,3 @@ Once you've done that, run:
 
 Then we should be able to run it as Danner does in his videos.
 
-edit again ...
-
