@@ -1,0 +1,5 @@
+(test
+ (name tests)
+ (libraries str ounit2 yojson ocminus)
+ (deps (source_tree suites)))
+

@@ -1,0 +1,80 @@
+type token =
+    TIMES
+  | THEN
+  | SEMI
+  | RPAREN
+  | PLUS
+  | OR
+  | NUM of int
+  | NOT
+  | NE
+  | MOD
+  | MINUS
+  | LT
+  | LPAREN
+  | LETREC
+  | LET
+  | LE
+  | KWAND
+  | IN
+  | IF
+  | ID of string
+  | GT
+  | GE
+  | FUN
+  | EQ
+  | EOF
+  | ELSE
+  | DIV
+  | BOOL of bool
+  | ARROW
+  | AND
+val left_assoc :
+  Ast.Expr.t -> (Ast.Expr.binop * Ast.Expr.t) list -> Ast.Expr.t
+val menhir_begin_marker : int
+val xv_unop : Ast.Expr.t
+val xv_terminated_pgm : Ast.Prog.t
+val xv_terminated_exp : Ast.Expr.t
+val xv_pmops : Ast.Expr.binop
+val xv_pmexp : Ast.Expr.t
+val xv_pgm : Ast.Prog.t
+val xv_orexp : Ast.Expr.t
+val xv_option_mainfundef_ : Ast.Prog.fundef list option
+val xv_operator_separated_list_pmops_mdexp_ :
+  Ast.Expr.t * (Ast.Expr.binop * Ast.Expr.t) list
+val xv_operator_separated_list_mdops_unop_ :
+  Ast.Expr.t * (Ast.Expr.binop * Ast.Expr.t) list
+val xv_operator_separated_list___anonymous_1_compexp_ :
+  Ast.Expr.t * (Ast.Expr.binop * Ast.Expr.t) list
+val xv_operator_separated_list___anonymous_0_andexp_ :
+  Ast.Expr.t * (Ast.Expr.binop * Ast.Expr.t) list
+val xv_op_sep_list_rest_pmops_mdexp_ : Ast.Expr.binop * Ast.Expr.t
+val xv_op_sep_list_rest_mdops_unop_ : Ast.Expr.binop * Ast.Expr.t
+val xv_op_sep_list_rest___anonymous_1_compexp_ : Ast.Expr.binop * Ast.Expr.t
+val xv_op_sep_list_rest___anonymous_0_andexp_ : Ast.Expr.binop * Ast.Expr.t
+val xv_morefundefs : Ast.Prog.fundef
+val xv_mdops : Ast.Expr.binop
+val xv_mdexp : Ast.Expr.t
+val xv_mainfundef : Ast.Prog.fundef list
+val xv_list_op_sep_list_rest_pmops_mdexp__ :
+  (Ast.Expr.binop * Ast.Expr.t) list
+val xv_list_op_sep_list_rest_mdops_unop__ :
+  (Ast.Expr.binop * Ast.Expr.t) list
+val xv_list_op_sep_list_rest___anonymous_1_compexp__ :
+  (Ast.Expr.binop * Ast.Expr.t) list
+val xv_list_op_sep_list_rest___anonymous_0_andexp__ :
+  (Ast.Expr.binop * Ast.Expr.t) list
+val xv_list_morefundefs_ : Ast.Prog.fundef list
+val xv_list_aexp_ : Ast.Expr.t list
+val xv_list_ID_ : string list
+val xv_ifletexp : Ast.Expr.t
+val xv_fundef : Ast.Prog.fundef
+val xv_exp : Ast.Expr.t
+val xv_compop : Ast.Expr.binop
+val xv_compexp : Ast.Expr.t
+val xv_appexp : Ast.Expr.t
+val xv_andexp : Ast.Expr.t
+val xv_aexp : Ast.Expr.t
+val xv___anonymous_1 : Ast.Expr.binop
+val xv___anonymous_0 : Ast.Expr.binop
+val menhir_end_marker : int

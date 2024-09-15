@@ -1,0 +1,66 @@
+2024-09-15T00:09:33+00:00 GaziMBP.local#02 I: Start test 1:03neg00.ml:0:0.
+2024-09-15T00:09:33+00:00 GaziMBP.local#02 E: Test 1:03neg00.ml:0:0 exited with an error.
+2024-09-15T00:09:33+00:00 GaziMBP.local#02 E: Failure("Unimplemented: eval: (Ast.Expr.Unop (Ast.Expr.Neg, (Ast.Expr.Num 5)))") in test 1:03neg00.ml:0:0.
+2024-09-15T00:09:33+00:00 GaziMBP.local#02 E: Raised at Stdlib.failwith in file "stdlib.ml", line 29, characters 17-33
+2024-09-15T00:09:33+00:00 GaziMBP.local#02 E: Called from Dune__exe__Tests.iotest.(fun) in file "test/tests.ml", lines 75-76, characters 6-30
+2024-09-15T00:09:33+00:00 GaziMBP.local#02 E: Called from OUnitRunner.run_one_test.(fun) in file "src/lib/ounit2/advanced/oUnitRunner.ml", line 83, characters 13-26
+2024-09-15T00:09:33+00:00 GaziMBP.local#02 E: 
+2024-09-15T00:09:33+00:00 GaziMBP.local#02 I: End test 1:03neg00.ml:0:0.
+2024-09-15T00:09:33+00:00 GaziMBP.local#02 I: Start test 4:15and00.ml:0:0.
+2024-09-15T00:09:33+00:00 GaziMBP.local#02 E: Test 4:15and00.ml:0:0 exited with an error.
+2024-09-15T00:09:33+00:00 GaziMBP.local#02 E: Failure("Unimplemented: eval: (Ast.Expr.Binop (Ast.Expr.And, (Ast.Expr.Bool true), (Ast.Expr.Bool true)))") in test 4:15and00.ml:0:0.
+2024-09-15T00:09:33+00:00 GaziMBP.local#02 E: Raised at Stdlib.failwith in file "stdlib.ml", line 29, characters 17-33
+2024-09-15T00:09:33+00:00 GaziMBP.local#02 E: Called from Dune__exe__Tests.iotest.(fun) in file "test/tests.ml", lines 75-76, characters 6-30
+2024-09-15T00:09:33+00:00 GaziMBP.local#02 E: Called from OUnitRunner.run_one_test.(fun) in file "src/lib/ounit2/advanced/oUnitRunner.ml", line 83, characters 13-26
+2024-09-15T00:09:33+00:00 GaziMBP.local#02 E: 
+2024-09-15T00:09:33+00:00 GaziMBP.local#02 I: End test 4:15and00.ml:0:0.
+2024-09-15T00:09:33+00:00 GaziMBP.local#02 I: Start test 6:25not00.ml:0:0.
+2024-09-15T00:09:33+00:00 GaziMBP.local#02 E: Test 6:25not00.ml:0:0 exited with an error.
+2024-09-15T00:09:33+00:00 GaziMBP.local#02 E: Failure("Unimplemented: eval: (Ast.Expr.Unop (Ast.Expr.Not, (Ast.Expr.Bool false)))") in test 6:25not00.ml:0:0.
+2024-09-15T00:09:33+00:00 GaziMBP.local#02 E: Raised at Stdlib.failwith in file "stdlib.ml", line 29, characters 17-33
+2024-09-15T00:09:33+00:00 GaziMBP.local#02 E: Called from Dune__exe__Tests.iotest.(fun) in file "test/tests.ml", lines 75-76, characters 6-30
+2024-09-15T00:09:33+00:00 GaziMBP.local#02 E: Called from OUnitRunner.run_one_test.(fun) in file "src/lib/ounit2/advanced/oUnitRunner.ml", line 83, characters 13-26
+2024-09-15T00:09:33+00:00 GaziMBP.local#02 E: 
+2024-09-15T00:09:33+00:00 GaziMBP.local#02 I: End test 6:25not00.ml:0:0.
+2024-09-15T00:09:33+00:00 GaziMBP.local#02 I: Start test 8:30ne00.ml:0:0.
+2024-09-15T00:09:33+00:00 GaziMBP.local#02 E: Test 8:30ne00.ml:0:0 exited with an error.
+2024-09-15T00:09:33+00:00 GaziMBP.local#02 E: Failure("Unimplemented: eval: (Ast.Expr.Binop (Ast.Expr.Ne, (Ast.Expr.Num 3), (Ast.Expr.Num 3)))") in test 8:30ne00.ml:0:0.
+2024-09-15T00:09:33+00:00 GaziMBP.local#02 E: Raised at Stdlib.failwith in file "stdlib.ml", line 29, characters 17-33
+2024-09-15T00:09:33+00:00 GaziMBP.local#02 E: Called from Dune__exe__Tests.iotest.(fun) in file "test/tests.ml", lines 75-76, characters 6-30
+2024-09-15T00:09:33+00:00 GaziMBP.local#02 E: Called from OUnitRunner.run_one_test.(fun) in file "src/lib/ounit2/advanced/oUnitRunner.ml", line 83, characters 13-26
+2024-09-15T00:09:33+00:00 GaziMBP.local#02 E: 
+2024-09-15T00:09:33+00:00 GaziMBP.local#02 I: End test 8:30ne00.ml:0:0.
+2024-09-15T00:09:33+00:00 GaziMBP.local#02 I: Start test 9:35ge00.ml:0:0.
+2024-09-15T00:09:33+00:00 GaziMBP.local#02 E: Test 9:35ge00.ml:0:0 exited with an error.
+2024-09-15T00:09:33+00:00 GaziMBP.local#02 E: Failure("Unimplemented: eval: (Ast.Expr.Binop (Ast.Expr.Ge, (Ast.Expr.Num 3), (Ast.Expr.Num 3)))") in test 9:35ge00.ml:0:0.
+2024-09-15T00:09:33+00:00 GaziMBP.local#02 E: Raised at Stdlib.failwith in file "stdlib.ml", line 29, characters 17-33
+2024-09-15T00:09:33+00:00 GaziMBP.local#02 E: Called from Dune__exe__Tests.iotest.(fun) in file "test/tests.ml", lines 75-76, characters 6-30
+2024-09-15T00:09:33+00:00 GaziMBP.local#02 E: Called from OUnitRunner.run_one_test.(fun) in file "src/lib/ounit2/advanced/oUnitRunner.ml", line 83, characters 13-26
+2024-09-15T00:09:33+00:00 GaziMBP.local#02 E: 
+2024-09-15T00:09:33+00:00 GaziMBP.local#02 I: End test 9:35ge00.ml:0:0.
+2024-09-15T00:09:33+00:00 GaziMBP.local#02 I: Start test 12:35let00.ml:0:0.
+2024-09-15T00:09:33+00:00 GaziMBP.local#02 E: Test 12:35let00.ml:0:0 exited with an error.
+2024-09-15T00:09:33+00:00 GaziMBP.local#02 E: Failure("Unimplemented: eval: (Ast.Expr.Let (\"x\", (Ast.Expr.Num 3),\n   (Ast.Expr.Binop (Ast.Expr.Times, (Ast.Expr.Var \"x\"), (Ast.Expr.Var \"x\")))\n   ))") in test 12:35let00.ml:0:0.
+2024-09-15T00:09:33+00:00 GaziMBP.local#02 E: Raised at Stdlib.failwith in file "stdlib.ml", line 29, characters 17-33
+2024-09-15T00:09:33+00:00 GaziMBP.local#02 E: Called from Dune__exe__Tests.iotest.(fun) in file "test/tests.ml", lines 75-76, characters 6-30
+2024-09-15T00:09:33+00:00 GaziMBP.local#02 E: Called from OUnitRunner.run_one_test.(fun) in file "src/lib/ounit2/advanced/oUnitRunner.ml", line 83, characters 13-26
+2024-09-15T00:09:33+00:00 GaziMBP.local#02 E: 
+2024-09-15T00:09:33+00:00 GaziMBP.local#02 I: End test 12:35let00.ml:0:0.
+2024-09-15T00:09:33+00:00 GaziMBP.local#02 I: Start test 14:40if00.ml:0:0.
+2024-09-15T00:09:33+00:00 GaziMBP.local#02 E: Test 14:40if00.ml:0:0 exited with an error.
+2024-09-15T00:09:33+00:00 GaziMBP.local#02 E: Failure("Unimplemented: eval: (Ast.Expr.If ((Ast.Expr.Bool true), (Ast.Expr.Num 0), (Ast.Expr.Num 1)))") in test 14:40if00.ml:0:0.
+2024-09-15T00:09:33+00:00 GaziMBP.local#02 E: Raised at Stdlib.failwith in file "stdlib.ml", line 29, characters 17-33
+2024-09-15T00:09:33+00:00 GaziMBP.local#02 E: Called from Dune__exe__Tests.iotest.(fun) in file "test/tests.ml", lines 75-76, characters 6-30
+2024-09-15T00:09:33+00:00 GaziMBP.local#02 E: Called from OUnitRunner.run_one_test.(fun) in file "src/lib/ounit2/advanced/oUnitRunner.ml", line 83, characters 13-26
+2024-09-15T00:09:33+00:00 GaziMBP.local#02 E: 
+2024-09-15T00:09:33+00:00 GaziMBP.local#02 I: End test 14:40if00.ml:0:0.
+2024-09-15T00:09:33+00:00 GaziMBP.local#02 I: Start test 16:50typeerr00.ml:0:0.
+2024-09-15T00:09:33+00:00 GaziMBP.local#02 I: Expected: TypeError
+2024-09-15T00:09:33+00:00 GaziMBP.local#02 I: Actual: Failure("Unimplemented: eval: (Ast.Expr.Binop (Ast.Expr.Plus, (Ast.Expr.Num 3), (Ast.Expr.Bool true)))")
+2024-09-15T00:09:33+00:00 GaziMBP.local#02 E: Test 16:50typeerr00.ml:0:0 has failed.
+2024-09-15T00:09:33+00:00 GaziMBP.local#02 E: expected: TypeError
+2024-09-15T00:09:33+00:00 GaziMBP.local#02 E: but got: Failure("Unimplemented: eval: (Ast.Expr.Binop (Ast.Expr.Plus, (Ast.Expr.Num 3), (Ast.Expr.Bool true)))") in test 16:50typeerr00.ml:0:0.
+2024-09-15T00:09:33+00:00 GaziMBP.local#02 E: Raised at OUnitAssert.assert_failure in file "src/lib/ounit2/advanced/oUnitAssert.ml", line 45, characters 2-27
+2024-09-15T00:09:33+00:00 GaziMBP.local#02 E: Called from OUnitRunner.run_one_test.(fun) in file "src/lib/ounit2/advanced/oUnitRunner.ml", line 83, characters 13-26
+2024-09-15T00:09:33+00:00 GaziMBP.local#02 E: 
+2024-09-15T00:09:33+00:00 GaziMBP.local#02 I: End test 16:50typeerr00.ml:0:0.
