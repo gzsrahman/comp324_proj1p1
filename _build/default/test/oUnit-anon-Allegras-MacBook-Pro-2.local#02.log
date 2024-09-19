@@ -1,0 +1,66 @@
+2024-09-19T03:05:11+00:00 Allegras-MacBook-Pro-2.local#02 I: Start test 1:eq_f.ml:0:0.
+2024-09-19T03:05:11+00:00 Allegras-MacBook-Pro-2.local#02 E: Test 1:eq_f.ml:0:0 exited with an error.
+2024-09-19T03:05:11+00:00 Allegras-MacBook-Pro-2.local#02 E: Failure("Unimplemented: eval: (Ast.Expr.Binop (Ast.Expr.Eq, (Ast.Expr.Num 10), (Ast.Expr.Num 11)))") in test 1:eq_f.ml:0:0.
+2024-09-19T03:05:11+00:00 Allegras-MacBook-Pro-2.local#02 E: Raised at Stdlib.failwith in file "stdlib.ml", line 29, characters 17-33
+2024-09-19T03:05:11+00:00 Allegras-MacBook-Pro-2.local#02 E: Called from Dune__exe__Tests.iotest in file "test/tests.ml", line 75, characters 6-47
+2024-09-19T03:05:11+00:00 Allegras-MacBook-Pro-2.local#02 E: Called from OUnitRunner.run_one_test.(fun) in file "src/lib/ounit2/advanced/oUnitRunner.ml", line 83, characters 13-26
+2024-09-19T03:05:11+00:00 Allegras-MacBook-Pro-2.local#02 E: 
+2024-09-19T03:05:11+00:00 Allegras-MacBook-Pro-2.local#02 I: End test 1:eq_f.ml:0:0.
+2024-09-19T03:05:11+00:00 Allegras-MacBook-Pro-2.local#02 I: Start test 4:gt_f.ml:0:0.
+2024-09-19T03:05:11+00:00 Allegras-MacBook-Pro-2.local#02 E: Test 4:gt_f.ml:0:0 exited with an error.
+2024-09-19T03:05:11+00:00 Allegras-MacBook-Pro-2.local#02 E: Failure("Unimplemented: eval: (Ast.Expr.Binop (Ast.Expr.Gt, (Ast.Expr.Num 1), (Ast.Expr.Num 3)))") in test 4:gt_f.ml:0:0.
+2024-09-19T03:05:11+00:00 Allegras-MacBook-Pro-2.local#02 E: Raised at Stdlib.failwith in file "stdlib.ml", line 29, characters 17-33
+2024-09-19T03:05:11+00:00 Allegras-MacBook-Pro-2.local#02 E: Called from Dune__exe__Tests.iotest in file "test/tests.ml", line 75, characters 6-47
+2024-09-19T03:05:11+00:00 Allegras-MacBook-Pro-2.local#02 E: Called from OUnitRunner.run_one_test.(fun) in file "src/lib/ounit2/advanced/oUnitRunner.ml", line 83, characters 13-26
+2024-09-19T03:05:11+00:00 Allegras-MacBook-Pro-2.local#02 E: 
+2024-09-19T03:05:11+00:00 Allegras-MacBook-Pro-2.local#02 I: End test 4:gt_f.ml:0:0.
+2024-09-19T03:05:11+00:00 Allegras-MacBook-Pro-2.local#02 I: Start test 5:gt_t.ml:0:0.
+2024-09-19T03:05:11+00:00 Allegras-MacBook-Pro-2.local#02 E: Test 5:gt_t.ml:0:0 exited with an error.
+2024-09-19T03:05:11+00:00 Allegras-MacBook-Pro-2.local#02 E: Failure("Unimplemented: eval: (Ast.Expr.Binop (Ast.Expr.Gt, (Ast.Expr.Num 4), (Ast.Expr.Num 1)))") in test 5:gt_t.ml:0:0.
+2024-09-19T03:05:11+00:00 Allegras-MacBook-Pro-2.local#02 E: Raised at Stdlib.failwith in file "stdlib.ml", line 29, characters 17-33
+2024-09-19T03:05:11+00:00 Allegras-MacBook-Pro-2.local#02 E: Called from Dune__exe__Tests.iotest in file "test/tests.ml", line 75, characters 6-47
+2024-09-19T03:05:11+00:00 Allegras-MacBook-Pro-2.local#02 E: Called from OUnitRunner.run_one_test.(fun) in file "src/lib/ounit2/advanced/oUnitRunner.ml", line 83, characters 13-26
+2024-09-19T03:05:11+00:00 Allegras-MacBook-Pro-2.local#02 E: 
+2024-09-19T03:05:11+00:00 Allegras-MacBook-Pro-2.local#02 I: End test 5:gt_t.ml:0:0.
+2024-09-19T03:05:11+00:00 Allegras-MacBook-Pro-2.local#02 I: Start test 7:le_f.ml:0:0.
+2024-09-19T03:05:11+00:00 Allegras-MacBook-Pro-2.local#02 E: Test 7:le_f.ml:0:0 exited with an error.
+2024-09-19T03:05:11+00:00 Allegras-MacBook-Pro-2.local#02 E: Failure("Unimplemented: eval: (Ast.Expr.Binop (Ast.Expr.Le, (Ast.Expr.Num 10), (Ast.Expr.Num 9)))") in test 7:le_f.ml:0:0.
+2024-09-19T03:05:11+00:00 Allegras-MacBook-Pro-2.local#02 E: Raised at Stdlib.failwith in file "stdlib.ml", line 29, characters 17-33
+2024-09-19T03:05:11+00:00 Allegras-MacBook-Pro-2.local#02 E: Called from Dune__exe__Tests.iotest in file "test/tests.ml", line 75, characters 6-47
+2024-09-19T03:05:11+00:00 Allegras-MacBook-Pro-2.local#02 E: Called from OUnitRunner.run_one_test.(fun) in file "src/lib/ounit2/advanced/oUnitRunner.ml", line 83, characters 13-26
+2024-09-19T03:05:11+00:00 Allegras-MacBook-Pro-2.local#02 E: 
+2024-09-19T03:05:11+00:00 Allegras-MacBook-Pro-2.local#02 I: End test 7:le_f.ml:0:0.
+2024-09-19T03:05:11+00:00 Allegras-MacBook-Pro-2.local#02 I: Start test 9:lt_t.ml:0:0.
+2024-09-19T03:05:11+00:00 Allegras-MacBook-Pro-2.local#02 E: Test 9:lt_t.ml:0:0 exited with an error.
+2024-09-19T03:05:11+00:00 Allegras-MacBook-Pro-2.local#02 E: Failure("Unimplemented: eval: (Ast.Expr.Binop (Ast.Expr.Lt, (Ast.Expr.Num 9), (Ast.Expr.Num 1)))") in test 9:lt_t.ml:0:0.
+2024-09-19T03:05:11+00:00 Allegras-MacBook-Pro-2.local#02 E: Raised at Stdlib.failwith in file "stdlib.ml", line 29, characters 17-33
+2024-09-19T03:05:11+00:00 Allegras-MacBook-Pro-2.local#02 E: Called from Dune__exe__Tests.iotest in file "test/tests.ml", line 75, characters 6-47
+2024-09-19T03:05:11+00:00 Allegras-MacBook-Pro-2.local#02 E: Called from OUnitRunner.run_one_test.(fun) in file "src/lib/ounit2/advanced/oUnitRunner.ml", line 83, characters 13-26
+2024-09-19T03:05:11+00:00 Allegras-MacBook-Pro-2.local#02 E: 
+2024-09-19T03:05:11+00:00 Allegras-MacBook-Pro-2.local#02 I: End test 9:lt_t.ml:0:0.
+2024-09-19T03:05:11+00:00 Allegras-MacBook-Pro-2.local#02 I: Start test 11:ne_t.ml:0:0.
+2024-09-19T03:05:11+00:00 Allegras-MacBook-Pro-2.local#02 E: Test 11:ne_t.ml:0:0 exited with an error.
+2024-09-19T03:05:11+00:00 Allegras-MacBook-Pro-2.local#02 E: Failure("Unimplemented: eval: (Ast.Expr.Binop (Ast.Expr.Ne, (Ast.Expr.Num 5), (Ast.Expr.Num 2)))") in test 11:ne_t.ml:0:0.
+2024-09-19T03:05:11+00:00 Allegras-MacBook-Pro-2.local#02 E: Raised at Stdlib.failwith in file "stdlib.ml", line 29, characters 17-33
+2024-09-19T03:05:11+00:00 Allegras-MacBook-Pro-2.local#02 E: Called from Dune__exe__Tests.iotest in file "test/tests.ml", line 75, characters 6-47
+2024-09-19T03:05:11+00:00 Allegras-MacBook-Pro-2.local#02 E: Called from OUnitRunner.run_one_test.(fun) in file "src/lib/ounit2/advanced/oUnitRunner.ml", line 83, characters 13-26
+2024-09-19T03:05:11+00:00 Allegras-MacBook-Pro-2.local#02 E: 
+2024-09-19T03:05:11+00:00 Allegras-MacBook-Pro-2.local#02 I: End test 11:ne_t.ml:0:0.
+2024-09-19T03:05:11+00:00 Allegras-MacBook-Pro-2.local#02 I: Start test 13:times.ml:0:0.
+2024-09-19T03:05:11+00:00 Allegras-MacBook-Pro-2.local#02 E: Test 13:times.ml:0:0 exited with an error.
+2024-09-19T03:05:11+00:00 Allegras-MacBook-Pro-2.local#02 E: Failure("Unimplemented: eval: (Ast.Expr.Binop (Ast.Expr.Times, (Ast.Expr.Num 2), (Ast.Expr.Num 6)))") in test 13:times.ml:0:0.
+2024-09-19T03:05:11+00:00 Allegras-MacBook-Pro-2.local#02 E: Raised at Stdlib.failwith in file "stdlib.ml", line 29, characters 17-33
+2024-09-19T03:05:11+00:00 Allegras-MacBook-Pro-2.local#02 E: Called from Dune__exe__Tests.iotest in file "test/tests.ml", line 75, characters 6-47
+2024-09-19T03:05:11+00:00 Allegras-MacBook-Pro-2.local#02 E: Called from OUnitRunner.run_one_test.(fun) in file "src/lib/ounit2/advanced/oUnitRunner.ml", line 83, characters 13-26
+2024-09-19T03:05:11+00:00 Allegras-MacBook-Pro-2.local#02 E: 
+2024-09-19T03:05:11+00:00 Allegras-MacBook-Pro-2.local#02 I: End test 13:times.ml:0:0.
+2024-09-19T03:05:11+00:00 Allegras-MacBook-Pro-2.local#02 I: Start test 15:undef_fun.ml:0:0.
+2024-09-19T03:05:11+00:00 Allegras-MacBook-Pro-2.local#02 I: Expected: UndefinedFunction
+2024-09-19T03:05:11+00:00 Allegras-MacBook-Pro-2.local#02 I: Actual: Failure("Unimplemented: eval: (Ast.Expr.Let (\"x\", (Ast.Expr.Num 3),\n   (Ast.Expr.Call ((Ast.Expr.Var \"f\"), [(Ast.Expr.Var \"x\")]))))")
+2024-09-19T03:05:11+00:00 Allegras-MacBook-Pro-2.local#02 E: Test 15:undef_fun.ml:0:0 has failed.
+2024-09-19T03:05:11+00:00 Allegras-MacBook-Pro-2.local#02 E: expected: UndefinedFunction
+2024-09-19T03:05:11+00:00 Allegras-MacBook-Pro-2.local#02 E: but got: Failure("Unimplemented: eval: (Ast.Expr.Let (\"x\", (Ast.Expr.Num 3),\n   (Ast.Expr.Call ((Ast.Expr.Var \"f\"), [(Ast.Expr.Var \"x\")]))))") in test 15:undef_fun.ml:0:0.
+2024-09-19T03:05:11+00:00 Allegras-MacBook-Pro-2.local#02 E: Raised at OUnitAssert.assert_failure in file "src/lib/ounit2/advanced/oUnitAssert.ml", line 45, characters 2-27
+2024-09-19T03:05:11+00:00 Allegras-MacBook-Pro-2.local#02 E: Called from OUnitRunner.run_one_test.(fun) in file "src/lib/ounit2/advanced/oUnitRunner.ml", line 83, characters 13-26
+2024-09-19T03:05:11+00:00 Allegras-MacBook-Pro-2.local#02 E: 
+2024-09-19T03:05:11+00:00 Allegras-MacBook-Pro-2.local#02 I: End test 15:undef_fun.ml:0:0.

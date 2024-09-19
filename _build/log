@@ -1,10 +1,9 @@
 # dune test
 # OCAMLPARAM: unset
 # Shared cache: disabled
-# Shared cache location: /Users/gazirahman/.cache/dune/db
-# Workspace root:
-# /Users/gazirahman/coursework/comp324/submissions/project1/project1/comp324_proj1p1
-# Auto-detected concurrency: 12
+# Shared cache location: /Users/allegracuriel/.cache/dune/db
+# Workspace root: /Users/allegracuriel/courses/comp324_proj1p1
+# Auto-detected concurrency: 8
 # Dune context:
 #  { name = "default"
 #  ; kind = "default"
@@ -14,215 +13,203 @@
 #  ; build_dir = In_build_dir "default"
 #  ; instrument_with = []
 #  }
-$ /Users/gazirahman/.opam/default/bin/ocamlc.opt -config > /var/folders/k3/j12_2ch96lv022yh9rg5ftf00000gn/T/dune_7f0609_output
+$ /Users/allegracuriel/.opam/5.1.1/bin/ocamlc.opt -config > /var/folders/qz/lltwpyt12v955tr8qdzzjtjh0000gn/T/dune_3848c5_output
 $ (cd _build/default/test && ./tests.exe)
 >
-> =====suites/00core=====
-> EEEEEEEEEEEEEEEEF
+> =====suites/90LambdaLegends=====
+> EEEEEEEEEEEEEEFF
 > ==============================================================================
-> Error: 15:45call00.ml:0:0.
+> Error: 13:times.ml:0:0.
 >
-> File "/Users/gazirahman/coursework/comp324/submissions/project1/project1/comp324_proj1p1/_build/default/test/oUnit-anon-GaziMBP.local#01.log", line 66, characters 1-1:
-> Error: 15:45call00.ml:0:0 (in the log).
+> File "/Users/allegracuriel/courses/comp324_proj1p1/_build/default/test/oUnit-anon-Allegras-MacBook-Pro-2.local#02.log", line 50, characters 1-1:
+> Error: 13:times.ml:0:0 (in the log).
 >
 > Raised at Stdlib.failwith in file "stdlib.ml", line 29, characters 17-33
-> Called from Dune__exe__Tests.iotest.(fun) in file "test/tests.ml", lines 75-76, characters 6-30
+> Called from Dune__exe__Tests.iotest in file "test/tests.ml", line 75, characters 6-47
 > Called from OUnitRunner.run_one_test.(fun) in file "src/lib/ounit2/advanced/oUnitRunner.ml", line 83, characters 13-26
 >
-> Failure("Unimplemented: eval: (Ast.Expr.Call ((Ast.Expr.Var \"f\"), [(Ast.Expr.Num 7)])) with f")
+> Failure("Unimplemented: eval: (Ast.Expr.Binop (Ast.Expr.Times, (Ast.Expr.Num 2), (Ast.Expr.Num 6)))")
 > ------------------------------------------------------------------------------
 > ==============================================================================
-> Error: 14:40if00.ml:0:0.
+> Error: 12:plus.ml:0:0.
 >
-> File "/Users/gazirahman/coursework/comp324/submissions/project1/project1/comp324_proj1p1/_build/default/test/oUnit-anon-GaziMBP.local#02.log", line 50, characters 1-1:
-> Error: 14:40if00.ml:0:0 (in the log).
+> File "/Users/allegracuriel/courses/comp324_proj1p1/_build/default/test/oUnit-anon-Allegras-MacBook-Pro-2.local#01.log", line 50, characters 1-1:
+> Error: 12:plus.ml:0:0 (in the log).
 >
 > Raised at Stdlib.failwith in file "stdlib.ml", line 29, characters 17-33
-> Called from Dune__exe__Tests.iotest.(fun) in file "test/tests.ml", lines 75-76, characters 6-30
+> Called from Dune__exe__Tests.iotest in file "test/tests.ml", line 75, characters 6-47
 > Called from OUnitRunner.run_one_test.(fun) in file "src/lib/ounit2/advanced/oUnitRunner.ml", line 83, characters 13-26
 >
-> Failure("Unimplemented: eval: (Ast.Expr.If ((Ast.Expr.Bool true), (Ast.Expr.Num 0), (Ast.Expr.Num 1)))")
+> Failure("Unimplemented: eval: (Ast.Expr.Binop (Ast.Expr.Plus, (Ast.Expr.Num 5), (Ast.Expr.Num 3)))")
 > ------------------------------------------------------------------------------
 > ==============================================================================
-> Error: 13:35lt00.ml:0:0.
+> Error: 11:ne_t.ml:0:0.
 >
-> File "/Users/gazirahman/coursework/comp324/submissions/project1/project1/comp324_proj1p1/_build/default/test/oUnit-anon-GaziMBP.local#01.log", line 58, characters 1-1:
-> Error: 13:35lt00.ml:0:0 (in the log).
+> File "/Users/allegracuriel/courses/comp324_proj1p1/_build/default/test/oUnit-anon-Allegras-MacBook-Pro-2.local#02.log", line 42, characters 1-1:
+> Error: 11:ne_t.ml:0:0 (in the log).
 >
 > Raised at Stdlib.failwith in file "stdlib.ml", line 29, characters 17-33
-> Called from Dune__exe__Tests.iotest.(fun) in file "test/tests.ml", lines 75-76, characters 6-30
+> Called from Dune__exe__Tests.iotest in file "test/tests.ml", line 75, characters 6-47
 > Called from OUnitRunner.run_one_test.(fun) in file "src/lib/ounit2/advanced/oUnitRunner.ml", line 83, characters 13-26
 >
-> Failure("Unimplemented: eval: (Ast.Expr.Binop (Ast.Expr.Lt, (Ast.Expr.Num 3), (Ast.Expr.Num 3)))")
+> Failure("Unimplemented: eval: (Ast.Expr.Binop (Ast.Expr.Ne, (Ast.Expr.Num 5), (Ast.Expr.Num 2)))")
 > ------------------------------------------------------------------------------
 > ==============================================================================
-> Error: 12:35let00.ml:0:0.
+> Error: 10:mod.ml:0:0.
 >
-> File "/Users/gazirahman/coursework/comp324/submissions/project1/project1/comp324_proj1p1/_build/default/test/oUnit-anon-GaziMBP.local#02.log", line 42, characters 1-1:
-> Error: 12:35let00.ml:0:0 (in the log).
+> File "/Users/allegracuriel/courses/comp324_proj1p1/_build/default/test/oUnit-anon-Allegras-MacBook-Pro-2.local#01.log", line 42, characters 1-1:
+> Error: 10:mod.ml:0:0 (in the log).
 >
 > Raised at Stdlib.failwith in file "stdlib.ml", line 29, characters 17-33
-> Called from Dune__exe__Tests.iotest.(fun) in file "test/tests.ml", lines 75-76, characters 6-30
+> Called from Dune__exe__Tests.iotest in file "test/tests.ml", line 75, characters 6-47
 > Called from OUnitRunner.run_one_test.(fun) in file "src/lib/ounit2/advanced/oUnitRunner.ml", line 83, characters 13-26
 >
-> Failure("Unimplemented: eval: (Ast.Expr.Let (\"x\", (Ast.Expr.Num 3),\n   (Ast.Expr.Binop (Ast.Expr.Times, (Ast.Expr.Var \"x\"), (Ast.Expr.Var \"x\")))\n   ))")
+> Failure("Unimplemented: eval: (Ast.Expr.Call ((Ast.Expr.Num 10), [(Ast.Expr.Var \"mod\"); (Ast.Expr.Num 3)]))")
 > ------------------------------------------------------------------------------
 > ==============================================================================
-> Error: 11:35le00.ml:0:0.
+> Error: 9:lt_t.ml:0:0.
 >
-> File "/Users/gazirahman/coursework/comp324/submissions/project1/project1/comp324_proj1p1/_build/default/test/oUnit-anon-GaziMBP.local#01.log", line 50, characters 1-1:
-> Error: 11:35le00.ml:0:0 (in the log).
+> File "/Users/allegracuriel/courses/comp324_proj1p1/_build/default/test/oUnit-anon-Allegras-MacBook-Pro-2.local#02.log", line 34, characters 1-1:
+> Error: 9:lt_t.ml:0:0 (in the log).
 >
 > Raised at Stdlib.failwith in file "stdlib.ml", line 29, characters 17-33
-> Called from Dune__exe__Tests.iotest.(fun) in file "test/tests.ml", lines 75-76, characters 6-30
+> Called from Dune__exe__Tests.iotest in file "test/tests.ml", line 75, characters 6-47
 > Called from OUnitRunner.run_one_test.(fun) in file "src/lib/ounit2/advanced/oUnitRunner.ml", line 83, characters 13-26
 >
-> Failure("Unimplemented: eval: (Ast.Expr.Binop (Ast.Expr.Le, (Ast.Expr.Num 3), (Ast.Expr.Num 3)))")
+> Failure("Unimplemented: eval: (Ast.Expr.Binop (Ast.Expr.Lt, (Ast.Expr.Num 9), (Ast.Expr.Num 1)))")
 > ------------------------------------------------------------------------------
 > ==============================================================================
-> Error: 9:35ge00.ml:0:0.
+> Error: 8:le_t.ml:0:0.
 >
-> File "/Users/gazirahman/coursework/comp324/submissions/project1/project1/comp324_proj1p1/_build/default/test/oUnit-anon-GaziMBP.local#02.log", line 34, characters 1-1:
-> Error: 9:35ge00.ml:0:0 (in the log).
+> File "/Users/allegracuriel/courses/comp324_proj1p1/_build/default/test/oUnit-anon-Allegras-MacBook-Pro-2.local#01.log", line 34, characters 1-1:
+> Error: 8:le_t.ml:0:0 (in the log).
 >
 > Raised at Stdlib.failwith in file "stdlib.ml", line 29, characters 17-33
-> Called from Dune__exe__Tests.iotest.(fun) in file "test/tests.ml", lines 75-76, characters 6-30
+> Called from Dune__exe__Tests.iotest in file "test/tests.ml", line 75, characters 6-47
 > Called from OUnitRunner.run_one_test.(fun) in file "src/lib/ounit2/advanced/oUnitRunner.ml", line 83, characters 13-26
 >
-> Failure("Unimplemented: eval: (Ast.Expr.Binop (Ast.Expr.Ge, (Ast.Expr.Num 3), (Ast.Expr.Num 3)))")
+> Failure("Unimplemented: eval: (Ast.Expr.Binop (Ast.Expr.Le, (Ast.Expr.Num 4), (Ast.Expr.Num 5)))")
 > ------------------------------------------------------------------------------
 > ==============================================================================
-> Error: 10:35gt00.ml:0:0.
+> Error: 7:le_f.ml:0:0.
 >
-> File "/Users/gazirahman/coursework/comp324/submissions/project1/project1/comp324_proj1p1/_build/default/test/oUnit-anon-GaziMBP.local#01.log", line 42, characters 1-1:
-> Error: 10:35gt00.ml:0:0 (in the log).
+> File "/Users/allegracuriel/courses/comp324_proj1p1/_build/default/test/oUnit-anon-Allegras-MacBook-Pro-2.local#02.log", line 26, characters 1-1:
+> Error: 7:le_f.ml:0:0 (in the log).
 >
 > Raised at Stdlib.failwith in file "stdlib.ml", line 29, characters 17-33
-> Called from Dune__exe__Tests.iotest.(fun) in file "test/tests.ml", lines 75-76, characters 6-30
+> Called from Dune__exe__Tests.iotest in file "test/tests.ml", line 75, characters 6-47
 > Called from OUnitRunner.run_one_test.(fun) in file "src/lib/ounit2/advanced/oUnitRunner.ml", line 83, characters 13-26
 >
-> Failure("Unimplemented: eval: (Ast.Expr.Binop (Ast.Expr.Gt, (Ast.Expr.Num 3), (Ast.Expr.Num 3)))")
+> Failure("Unimplemented: eval: (Ast.Expr.Binop (Ast.Expr.Le, (Ast.Expr.Num 10), (Ast.Expr.Num 9)))")
 > ------------------------------------------------------------------------------
 > ==============================================================================
-> Error: 8:30ne00.ml:0:0.
+> Error: 6:if_false.ml:0:0.
 >
-> File "/Users/gazirahman/coursework/comp324/submissions/project1/project1/comp324_proj1p1/_build/default/test/oUnit-anon-GaziMBP.local#02.log", line 26, characters 1-1:
-> Error: 8:30ne00.ml:0:0 (in the log).
+> File "/Users/allegracuriel/courses/comp324_proj1p1/_build/default/test/oUnit-anon-Allegras-MacBook-Pro-2.local#01.log", line 26, characters 1-1:
+> Error: 6:if_false.ml:0:0 (in the log).
 >
 > Raised at Stdlib.failwith in file "stdlib.ml", line 29, characters 17-33
-> Called from Dune__exe__Tests.iotest.(fun) in file "test/tests.ml", lines 75-76, characters 6-30
+> Called from Dune__exe__Tests.iotest in file "test/tests.ml", line 75, characters 6-47
 > Called from OUnitRunner.run_one_test.(fun) in file "src/lib/ounit2/advanced/oUnitRunner.ml", line 83, characters 13-26
 >
-> Failure("Unimplemented: eval: (Ast.Expr.Binop (Ast.Expr.Ne, (Ast.Expr.Num 3), (Ast.Expr.Num 3)))")
+> Failure("Unimplemented: eval: (Ast.Expr.If ((Ast.Expr.Bool false), (Ast.Expr.Num 0), (Ast.Expr.Num 1)))")
 > ------------------------------------------------------------------------------
 > ==============================================================================
-> Error: 7:30eq00.ml:0:0.
+> Error: 5:gt_t.ml:0:0.
 >
-> File "/Users/gazirahman/coursework/comp324/submissions/project1/project1/comp324_proj1p1/_build/default/test/oUnit-anon-GaziMBP.local#01.log", line 34, characters 1-1:
-> Error: 7:30eq00.ml:0:0 (in the log).
+> File "/Users/allegracuriel/courses/comp324_proj1p1/_build/default/test/oUnit-anon-Allegras-MacBook-Pro-2.local#02.log", line 18, characters 1-1:
+> Error: 5:gt_t.ml:0:0 (in the log).
 >
 > Raised at Stdlib.failwith in file "stdlib.ml", line 29, characters 17-33
-> Called from Dune__exe__Tests.iotest.(fun) in file "test/tests.ml", lines 75-76, characters 6-30
+> Called from Dune__exe__Tests.iotest in file "test/tests.ml", line 75, characters 6-47
 > Called from OUnitRunner.run_one_test.(fun) in file "src/lib/ounit2/advanced/oUnitRunner.ml", line 83, characters 13-26
 >
-> Failure("Unimplemented: eval: (Ast.Expr.Binop (Ast.Expr.Eq, (Ast.Expr.Num 3), (Ast.Expr.Num 3)))")
+> Failure("Unimplemented: eval: (Ast.Expr.Binop (Ast.Expr.Gt, (Ast.Expr.Num 4), (Ast.Expr.Num 1)))")
 > ------------------------------------------------------------------------------
 > ==============================================================================
-> Error: 6:25not00.ml:0:0.
+> Error: 3:ge_f.ml:0:0.
 >
-> File "/Users/gazirahman/coursework/comp324/submissions/project1/project1/comp324_proj1p1/_build/default/test/oUnit-anon-GaziMBP.local#02.log", line 18, characters 1-1:
-> Error: 6:25not00.ml:0:0 (in the log).
+> File "/Users/allegracuriel/courses/comp324_proj1p1/_build/default/test/oUnit-anon-Allegras-MacBook-Pro-2.local#01.log", line 18, characters 1-1:
+> Error: 3:ge_f.ml:0:0 (in the log).
 >
 > Raised at Stdlib.failwith in file "stdlib.ml", line 29, characters 17-33
-> Called from Dune__exe__Tests.iotest.(fun) in file "test/tests.ml", lines 75-76, characters 6-30
+> Called from Dune__exe__Tests.iotest in file "test/tests.ml", line 75, characters 6-47
 > Called from OUnitRunner.run_one_test.(fun) in file "src/lib/ounit2/advanced/oUnitRunner.ml", line 83, characters 13-26
 >
-> Failure("Unimplemented: eval: (Ast.Expr.Unop (Ast.Expr.Not, (Ast.Expr.Bool false)))")
+> Failure("Unimplemented: eval: (Ast.Expr.Binop (Ast.Expr.Ge, (Ast.Expr.Num 1), (Ast.Expr.Num 5)))")
 > ------------------------------------------------------------------------------
 > ==============================================================================
-> Error: 5:20or00.ml:0:0.
+> Error: 4:gt_f.ml:0:0.
 >
-> File "/Users/gazirahman/coursework/comp324/submissions/project1/project1/comp324_proj1p1/_build/default/test/oUnit-anon-GaziMBP.local#01.log", line 26, characters 1-1:
-> Error: 5:20or00.ml:0:0 (in the log).
+> File "/Users/allegracuriel/courses/comp324_proj1p1/_build/default/test/oUnit-anon-Allegras-MacBook-Pro-2.local#02.log", line 10, characters 1-1:
+> Error: 4:gt_f.ml:0:0 (in the log).
 >
 > Raised at Stdlib.failwith in file "stdlib.ml", line 29, characters 17-33
-> Called from Dune__exe__Tests.iotest.(fun) in file "test/tests.ml", lines 75-76, characters 6-30
+> Called from Dune__exe__Tests.iotest in file "test/tests.ml", line 75, characters 6-47
 > Called from OUnitRunner.run_one_test.(fun) in file "src/lib/ounit2/advanced/oUnitRunner.ml", line 83, characters 13-26
 >
-> Failure("Unimplemented: eval: (Ast.Expr.Binop (Ast.Expr.Or, (Ast.Expr.Bool true), (Ast.Expr.Bool true)))")
+> Failure("Unimplemented: eval: (Ast.Expr.Binop (Ast.Expr.Gt, (Ast.Expr.Num 1), (Ast.Expr.Num 3)))")
 > ------------------------------------------------------------------------------
 > ==============================================================================
-> Error: 4:15and00.ml:0:0.
+> Error: 1:eq_f.ml:0:0.
 >
-> File "/Users/gazirahman/coursework/comp324/submissions/project1/project1/comp324_proj1p1/_build/default/test/oUnit-anon-GaziMBP.local#02.log", line 10, characters 1-1:
-> Error: 4:15and00.ml:0:0 (in the log).
+> File "/Users/allegracuriel/courses/comp324_proj1p1/_build/default/test/oUnit-anon-Allegras-MacBook-Pro-2.local#02.log", line 2, characters 1-1:
+> Error: 1:eq_f.ml:0:0 (in the log).
 >
 > Raised at Stdlib.failwith in file "stdlib.ml", line 29, characters 17-33
-> Called from Dune__exe__Tests.iotest.(fun) in file "test/tests.ml", lines 75-76, characters 6-30
+> Called from Dune__exe__Tests.iotest in file "test/tests.ml", line 75, characters 6-47
 > Called from OUnitRunner.run_one_test.(fun) in file "src/lib/ounit2/advanced/oUnitRunner.ml", line 83, characters 13-26
 >
-> Failure("Unimplemented: eval: (Ast.Expr.Binop (Ast.Expr.And, (Ast.Expr.Bool true), (Ast.Expr.Bool true)))")
+> Failure("Unimplemented: eval: (Ast.Expr.Binop (Ast.Expr.Eq, (Ast.Expr.Num 10), (Ast.Expr.Num 11)))")
 > ------------------------------------------------------------------------------
 > ==============================================================================
-> Error: 3:10arith00.ml:0:0.
+> Error: 2:ge_eq.ml:0:0.
 >
-> File "/Users/gazirahman/coursework/comp324/submissions/project1/project1/comp324_proj1p1/_build/default/test/oUnit-anon-GaziMBP.local#01.log", line 18, characters 1-1:
-> Error: 3:10arith00.ml:0:0 (in the log).
+> File "/Users/allegracuriel/courses/comp324_proj1p1/_build/default/test/oUnit-anon-Allegras-MacBook-Pro-2.local#01.log", line 10, characters 1-1:
+> Error: 2:ge_eq.ml:0:0 (in the log).
 >
 > Raised at Stdlib.failwith in file "stdlib.ml", line 29, characters 17-33
-> Called from Dune__exe__Tests.iotest.(fun) in file "test/tests.ml", lines 75-76, characters 6-30
+> Called from Dune__exe__Tests.iotest in file "test/tests.ml", line 75, characters 6-47
 > Called from OUnitRunner.run_one_test.(fun) in file "src/lib/ounit2/advanced/oUnitRunner.ml", line 83, characters 13-26
 >
-> Failure("Unimplemented: eval: (Ast.Expr.Binop (Ast.Expr.Minus, (Ast.Expr.Num 3), (Ast.Expr.Num 5)))")
+> Failure("Unimplemented: eval: (Ast.Expr.Binop (Ast.Expr.Ge, (Ast.Expr.Num 7), (Ast.Expr.Num 7)))")
 > ------------------------------------------------------------------------------
 > ==============================================================================
-> Error: 1:03neg00.ml:0:0.
+> Error: 0:div.ml:0:0.
 >
-> File "/Users/gazirahman/coursework/comp324/submissions/project1/project1/comp324_proj1p1/_build/default/test/oUnit-anon-GaziMBP.local#02.log", line 2, characters 1-1:
-> Error: 1:03neg00.ml:0:0 (in the log).
+> File "/Users/allegracuriel/courses/comp324_proj1p1/_build/default/test/oUnit-anon-Allegras-MacBook-Pro-2.local#01.log", line 2, characters 1-1:
+> Error: 0:div.ml:0:0 (in the log).
 >
 > Raised at Stdlib.failwith in file "stdlib.ml", line 29, characters 17-33
-> Called from Dune__exe__Tests.iotest.(fun) in file "test/tests.ml", lines 75-76, characters 6-30
+> Called from Dune__exe__Tests.iotest in file "test/tests.ml", line 75, characters 6-47
 > Called from OUnitRunner.run_one_test.(fun) in file "src/lib/ounit2/advanced/oUnitRunner.ml", line 83, characters 13-26
 >
-> Failure("Unimplemented: eval: (Ast.Expr.Unop (Ast.Expr.Neg, (Ast.Expr.Num 5)))")
+> Failure("Unimplemented: eval: (Ast.Expr.Binop (Ast.Expr.Div,\n   (Ast.Expr.Unop (Ast.Expr.Neg, (Ast.Expr.Num 100))), (Ast.Expr.Num 5)))")
 > ------------------------------------------------------------------------------
 > ==============================================================================
-> Error: 2:05bool00.ml:0:0.
+> Error: 15:undef_fun.ml:0:0.
 >
-> File "/Users/gazirahman/coursework/comp324/submissions/project1/project1/comp324_proj1p1/_build/default/test/oUnit-anon-GaziMBP.local#01.log", line 10, characters 1-1:
-> Error: 2:05bool00.ml:0:0 (in the log).
->
-> Raised at Stdlib.failwith in file "stdlib.ml", line 29, characters 17-33
-> Called from Dune__exe__Tests.iotest.(fun) in file "test/tests.ml", lines 75-76, characters 6-30
-> Called from OUnitRunner.run_one_test.(fun) in file "src/lib/ounit2/advanced/oUnitRunner.ml", line 83, characters 13-26
->
-> Failure("Unimplemented: eval: (Ast.Expr.Bool true)")
-> ------------------------------------------------------------------------------
-> ==============================================================================
-> Error: 0:00num00.ml:0:0.
->
-> File "/Users/gazirahman/coursework/comp324/submissions/project1/project1/comp324_proj1p1/_build/default/test/oUnit-anon-GaziMBP.local#01.log", line 2, characters 1-1:
-> Error: 0:00num00.ml:0:0 (in the log).
->
-> Raised at Stdlib.failwith in file "stdlib.ml", line 29, characters 17-33
-> Called from Dune__exe__Tests.iotest.(fun) in file "test/tests.ml", lines 75-76, characters 6-30
-> Called from OUnitRunner.run_one_test.(fun) in file "src/lib/ounit2/advanced/oUnitRunner.ml", line 83, characters 13-26
->
-> Failure("Unimplemented: eval: (Ast.Expr.Num 3)")
-> ------------------------------------------------------------------------------
-> ==============================================================================
-> Error: 16:50typeerr00.ml:0:0.
->
-> File "/Users/gazirahman/coursework/comp324/submissions/project1/project1/comp324_proj1p1/_build/default/test/oUnit-anon-GaziMBP.local#02.log", line 60, characters 1-1:
-> Error: 16:50typeerr00.ml:0:0 (in the log).
+> File "/Users/allegracuriel/courses/comp324_proj1p1/_build/default/test/oUnit-anon-Allegras-MacBook-Pro-2.local#02.log", line 60, characters 1-1:
+> Error: 15:undef_fun.ml:0:0 (in the log).
 >
 > Raised at OUnitAssert.assert_failure in file "src/lib/ounit2/advanced/oUnitAssert.ml", line 45, characters 2-27
 > Called from OUnitRunner.run_one_test.(fun) in file "src/lib/ounit2/advanced/oUnitRunner.ml", line 83, characters 13-26
 >
-> expected: TypeError
-> but got: Failure("Unimplemented: eval: (Ast.Expr.Binop (Ast.Expr.Plus, (Ast.Expr.Num 3), (Ast.Expr.Bool true)))")
+> expected: UndefinedFunction
+> but got: Failure("Unimplemented: eval: (Ast.Expr.Let (\"x\", (Ast.Expr.Num 3),\n   (Ast.Expr.Call ((Ast.Expr.Var \"f\"), [(Ast.Expr.Var \"x\")]))))")
 > ------------------------------------------------------------------------------
-> Ran: 17 tests in: 0.11 seconds.
-> FAILED: Cases: 17 Tried: 17 Errors: 16 Failures: 1 Skip:  0 Todo: 0 Timeouts: 0.
+> ==============================================================================
+> Error: 14:unbound_var.ml:0:0.
+>
+> File "/Users/allegracuriel/courses/comp324_proj1p1/_build/default/test/oUnit-anon-Allegras-MacBook-Pro-2.local#01.log", line 60, characters 1-1:
+> Error: 14:unbound_var.ml:0:0 (in the log).
+>
+> Raised at OUnitAssert.assert_failure in file "src/lib/ounit2/advanced/oUnitAssert.ml", line 45, characters 2-27
+> Called from OUnitRunner.run_one_test.(fun) in file "src/lib/ounit2/advanced/oUnitRunner.ml", line 83, characters 13-26
+>
+> expected: UnboundVariable
+> but got: Failure("Unimplemented: eval: (Ast.Expr.Binop (Ast.Expr.Plus, (Ast.Expr.Var \"x\"), (Ast.Expr.Num 2)))")
+> ------------------------------------------------------------------------------
+> Ran: 16 tests in: 0.11 seconds.
+> FAILED: Cases: 16 Tried: 16 Errors: 14 Failures: 2 Skip:  0 Todo: 0 Timeouts: 0.
 [1]
