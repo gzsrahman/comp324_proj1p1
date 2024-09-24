@@ -1,8 +1,0 @@
-lib: [
-  "_build/install/default/lib/ocminus/META"
-  "_build/install/default/lib/ocminus/dune-package"
-  "_build/install/default/lib/ocminus/opam"
-]
-bin: [
-  "_build/install/default/bin/ocminus"
-]

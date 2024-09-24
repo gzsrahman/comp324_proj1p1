@@ -1,0 +1,1 @@
+This folder contains the work of the LambdaLegends team, consisting of Gazi Rahman, Julissa Mota, and Allegra Curiel for Comp324.

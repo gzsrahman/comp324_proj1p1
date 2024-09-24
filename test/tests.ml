@@ -52,8 +52,6 @@
  * output match the `output` attribute, then raise the indicated exception.
  *)
 
-open OUnit2
-
 module YJ = Yojson.Basic
 module YJU = YJ.Util
 
@@ -69,15 +67,15 @@ let interp_tests_dir = "suites"
 (* iotest test_code expected = a test that executes `test_code` and passes
  * if the output matches `expected`, and fails otherwise.
  *)
-let iotest test_code expected =
-  fun tc ->
-    let actual : string =
+let iotest test_file test_code expected () : Alcotest.return =
+  Alcotest.(check string)
+    test_file
+    expected
+    (
       test_code 
         |> Ocminus.Interp.exec
         |> Ocminus.Interp.Value.to_string
-    in
-
-    assert_equal ~ctxt:tc ~printer:(fun s -> s) expected actual
+    )
 
 (* extest test_code input expected = a test that succeeds when executing
  * `test_code` with `input` raises an exception e such that
@@ -89,25 +87,22 @@ let iotest test_code expected =
  * we compare to the string representation of the exception, which we expect
  * to be fixed by an appropriate call to `Printexc.register_printer`.
  *)
-let extest test_code expected =
-  fun tc ->
-    let actual : string option =
+let extest test_file test_code expected () : Alcotest.return =
+  Alcotest.(check (option string))
+    test_file
+    (Some expected)
+    (
       try
         let _ = Ocminus.Interp.exec test_code in
         None
       with
       | e -> Some (Printexc.to_string e)
-    in
-
-    assert_equal 
-      ~ctxt:tc 
-      ~printer:(function | Some s -> s | None -> "No exception raised") 
-      (Some expected) actual
+    )
 
 (* make_test_from_spec fname spec = tf, where `tf` is a test function
  * corresponding to the test defined by `spec` in the file `fname`.
  *)
-let make_test_from_spec (test_file : string) (spec : YJ.t) : test_fun =
+let make_test_from_spec (test_file : string) (spec : YJ.t) : unit -> Alcotest.return =
 
   (* test_code = the program parsed from `fname`.
    *)
@@ -139,12 +134,12 @@ let make_test_from_spec (test_file : string) (spec : YJ.t) : test_fun =
       | _ -> raise @@ BadSpec "Multiple outputs specified"
     in
 
-    iotest test_code expected
+    iotest test_file test_code expected
 
   else if List.exists (fun k -> k = "exception") keys then
     let ex : string =
       spec |> YJU.member "exception" |> YJU.to_string in
-    extest test_code ex
+    extest test_file test_code ex
   else
     raise @@ BadSpec "No output or exception attribute"
 
@@ -162,7 +157,7 @@ let is_dir (f : string) : bool =
  * for OCaml- programs, each test file specifies exactly one test, so each
  * test "suite" consists of a single test.
  *)
-let tests_from_file (test_file : string) : test list =
+let tests_from_file (test_file : string) : unit Alcotest.test_case list =
 
   (* read_test_specs = ts, where ts is a list of JSON test specs read from
    * `test_file`.
@@ -213,18 +208,26 @@ let tests_from_file (test_file : string) : test list =
        *)
       let specs = read_test_specs() in
 
-      List.mapi
-        (
-          fun n s ->
-            try
-              Int.to_string n >:: make_test_from_spec test_file s
-            with
-            | BadSpec msg ->
-              raise @@ BadSpec (
-                Printf.sprintf "%s(%d): %s" test_file n msg
-              )
-        )
-        specs
+      (
+        List.mapi
+          (
+            fun n s ->
+              try
+                (*
+                Int.to_string n >:: make_test_from_spec test_file s
+                *)
+                Alcotest.test_case
+                  (Int.to_string n)
+                  `Quick
+                  (make_test_from_spec test_file s)
+              with
+              | BadSpec msg ->
+                raise @@ BadSpec (
+                  Printf.sprintf "%s(%d): %s" test_file n msg
+                )
+          )
+          specs
+      )
     with
     | Yojson.Json_error s ->
       raise @@ BadSpec (
@@ -264,51 +267,38 @@ let () =
 
     (* suite_dirs = directories that contain test files.
      *)
-    let suite_dirs : string list =
+    let suite_dirs : string Array.t =
       Sys.readdir interp_tests_dir 
       |> Array.to_list 
       |> List.map (Filename.concat interp_tests_dir)
       |> List.filter is_dir 
       |> List.sort Stdlib.compare
+      |> List.to_seq
+      |> Array.of_seq
     in
 
-    (* suites = the test suites, one per directory in `suite_dirs`.
-     *)
-    let suites : test list =
-      List.map (
-        fun suite_dir ->
-          suite_dir >:::
-            List.map
-              (
-                fun test_file ->
-                  test_file >::: (
-                    tests_from_file (
-                      Filename.concat suite_dir test_file
-                    )
-                  )
-              )
-              (test_files suite_dir)
-      ) suite_dirs
-    in
+    for i = 0 to Array.length suite_dirs - 1 do
+      let suite_dir = suite_dirs.(i) in
+      try
+        Alcotest.run
+          ~and_exit:false
+          suite_dir
+          (
+            List.map (
+              fun test_file ->
+                (
+                  test_file,
+                  tests_from_file (Filename.concat suite_dir test_file)
+                )
+            ) (test_files suite_dir)
+          )
+      with
+      | Alcotest.Test_error -> ()
+    done
 
-  (*  show_and_run s:  If `s` : `OUnitTest.TestLabel` (like a named test
-   *  suite), print `s` and the run the tests in `s`.  Otherwise just run
-   *  `s`.
-   *)
-  let show_and_run (s : test) : unit =
-    match s with
-    | OUnitTest.TestLabel (name, s') ->
-      print_endline "" ;
-      print_endline @@ "=====" ^ name ^ "=====" ;
-      run_test_tt_main s' ;
-      print_endline ""
-    | _ -> 
-      run_test_tt_main s ;
-  in
-
-  List.iter show_and_run suites
 
   with
   | BadSpec msg ->
     Printf.eprintf "%s" msg
+
 

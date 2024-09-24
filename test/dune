@@ -1,5 +1,5 @@
 (test
  (name tests)
- (libraries str ounit2 yojson ocminus)
+ (libraries str alcotest yojson ocminus)
  (deps (source_tree suites)))
 
