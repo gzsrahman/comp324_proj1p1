@@ -48,6 +48,14 @@ module Env = struct
   (* empty = the empty environment.
    *)
   let empty : t = []
+
+  (* lookup ρ x = ρ(x) *)
+  let lookup (rho : t) (x : Ast.Id.t) : Value.t = 
+      List.assoc x rho
+
+  (* update ρ x v = ρ{x -> v}*)
+  let update (rho : t) (x : Ast.Id.t) (v : Value.t) : t =
+    (x,v) :: List.remove_assoc x rho
 end
 
 (* eval pgm ρ e = v, where pgm, ρ ├ e ↓ v.
