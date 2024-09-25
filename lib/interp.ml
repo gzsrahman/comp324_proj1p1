@@ -58,12 +58,47 @@ module Env = struct
     (x,v) :: List.remove_assoc x rho
 end
 
+(* unop op v = v' where v' is the result of applying the semantic 
+* denotation of 'op' to 'v'
+*)
 let unop (op : Ast.Expr.unop) (v : Value.t) : Value.t =
   match (op,v) with 
     |(Ast.Expr.Neg, Value.V_Int n) -> Value.V_Int(-n)
-    |(Ast.Expr.Neg, Value.V_Bool b) -> raise (TypeError "Can't have a negative boolean")
-    |(Ast.Expr.Not, Value.V_Int n) -> raise (TypeError "Can't negate an integer")
     |(Ast.Expr.Not, Value.V_Bool b) -> Value.V_Bool(not b)
+    |_ -> raise (TypeError "Can't perform this operation on this type")
+
+(* binop op v v' = v'' where v'' is the result of applying the semantic
+ *  denotation of `op` to `v` and `v''`.
+ *)
+let binop (op : Ast.Expr.binop) (v : Value.t) (v' : Value.t) : Value.t = 
+  match (op, v, v') with 
+  |(Ast.Expr.Plus, Value.V_Int n, Value.V_Int n') -> Value.V_Int(n + n')
+  |(Ast.Expr.Minus, Value.V_Int n, Value.V_Int n' ) -> Value.V_Int(n - n')
+  |(Ast.Expr.Times, Value.V_Int n, Value.V_Int n') -> Value.V_Int (n * n')
+  |(Ast.Expr.Div, Value.V_Int n, Value.V_Int n') -> Value.V_Int (n / n')
+  |(Ast.Expr.Mod, Value.V_Int n, Value.V_Int n') -> Value.V_Int(n mod n')
+  |(Ast.Expr.And, Value.V_Bool b, Value.V_Bool b') -> Value.V_Bool ( b && b')
+  |(Ast.Expr.Or, Value.V_Bool b, Value.V_Bool b') -> Value.V_Bool (b || b')
+  |(Ast.Expr.Eq, v, v') -> Value.V_Bool (v == v')
+  |(Ast.Expr.Ne, v, v') -> Value.V_Bool (v != v')
+  |(Ast.Expr.Lt, Value.V_Int n, Value.V_Int n') -> Value.V_Bool (n < n')
+  |(Ast.Expr.Le, Value.V_Int n, Value.V_Int n') -> Value.V_Bool (n <= n')
+  |(Ast.Expr.Gt, Value.V_Int n, Value.V_Int n') -> Value.V_Bool (n > n')
+  |(Ast.Expr.Ge, Value.V_Int n, Value.V_Int n') -> Value.V_Bool (n >= n')
+  |_ -> raise (TypeError "You can't perform this operation on this type/types")
+
+
+(* If v v0 v1 = v2 where v2 is the result of the condition v being true or not,
+ * and then evaluating to either v0 or v1 depending on if it's true
+ *)
+let ifs (v : Value.t) (v0 : Value.t) (v1 : Value.t) : Value.t =
+  match (v, v0, v1) with
+  |(Value.V_Bool b, Value.t tr, Value.t fa) -> 
+    if b == true then tr
+    else fa
+  |_ -> raise (TypeError "You can't perform an if statement with these types")
+
+
 (* eval pgm ρ e = v, where pgm, ρ ├ e ↓ v.
  *
  * I have provided this as a bit of starter code, especially to show the
@@ -89,13 +124,19 @@ let rec eval
   |Ast.Expr.Unop (op, e) -> 
     let v = eval funs rho e in 
     unop op v 
-  |Ast.Expr.Binop (op, e, e') -> pass
-  |Ast.Expr.If (e, e0, e1) -> pass
-  |Ast.Expr.Let (x, e0, e1) -> pass
-  |Ast.Expr.Call(Var f, _) ->
-    Failures.unimplemented (
-      Printf.sprintf "eval: %s with %s" (Ast.Expr.show e) f
-    )
+  |Ast.Expr.Binop (op, e, e') -> 
+    let v = eval funs rho e in
+    let v' = eval funs rho e' in 
+    binop op v v'
+  |Ast.Expr.If (e, e0, e1) -> 
+    let v = eval funs rho e in
+    let v0 = eval funs rho e0 in
+    let v1 = eval funs rho e1 in 
+    ifs v v0 v1
+  |Ast.Expr.Let (x, e0, e1) -> Failures.unimplemented (
+    Printf.sprintf "eval: %s" (Ast.Expr.show e))
+  |Ast.Expr.Call(Var f, xxs) -> Failures.unimplemented (
+    Printf.sprintf "eval: %s" (Ast.Expr.show e))
   | _ -> 
     Failures.unimplemented (
       Printf.sprintf "eval: %s" (Ast.Expr.show e)
