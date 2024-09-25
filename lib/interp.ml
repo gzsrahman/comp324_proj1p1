@@ -58,6 +58,12 @@ module Env = struct
     (x,v) :: List.remove_assoc x rho
 end
 
+let unop (op : Ast.Expr.unop) (v : Value.t) : Value.t =
+  match (op,v) with 
+    |(Ast.Expr.Neg, Value.V_Int n) -> Value.V_Int(-n)
+    |(Ast.Expr.Neg, Value.V_Bool b) -> raise (TypeError "Can't have a negative boolean")
+    |(Ast.Expr.Not, Value.V_Int n) -> raise (TypeError "Can't negate an integer")
+    |(Ast.Expr.Not, Value.V_Bool b) -> Value.V_Bool(not b)
 (* eval pgm ρ e = v, where pgm, ρ ├ e ↓ v.
  *
  * I have provided this as a bit of starter code, especially to show the
@@ -72,12 +78,21 @@ end
  * strict, and report a non-recursive function declared with `let rec` as an
  * error.
  *)
-let eval
-    (_ : Ast.Prog.fundef list)
-    (_ : Env.t)
+let rec eval
+    (funs: Ast.Prog.fundef list)
+    (rho : Env.t)
     (e : Ast.Expr.t) : Value.t =
   match e with
-  | Call(Var f, _) ->
+  |Ast.Expr.Var x -> Env.lookup rho x
+  |Ast.Expr.Num n -> Value.V_Int n
+  |Ast.Expr.Bool b -> Value.V_Bool b
+  |Ast.Expr.Unop (op, e) -> 
+    let v = eval funs rho e in 
+    unop op v 
+  |Ast.Expr.Binop (op, e, e') -> pass
+  |Ast.Expr.If (e, e0, e1) -> pass
+  |Ast.Expr.Let (x, e0, e1) -> pass
+  |Ast.Expr.Call(Var f, _) ->
     Failures.unimplemented (
       Printf.sprintf "eval: %s with %s" (Ast.Expr.show e) f
     )
