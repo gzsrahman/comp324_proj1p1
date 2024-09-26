@@ -1,6 +1,6 @@
 (*!tests!
  *
- * { "exception": ["Ocminus.Interp.DivisionByZero"] }
+ * {"exception": "Ocminus.Interp.DivisionByZero"}
  *
  *)
 10 % 0 ;;
