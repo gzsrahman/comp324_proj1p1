@@ -1,6 +1,6 @@
 (*!tests!
 *
-* {"exception": "too many arguments given"}
+* {"exception": "TypeError"}
 *
 *)
 

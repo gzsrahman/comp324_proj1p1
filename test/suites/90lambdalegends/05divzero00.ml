@@ -1,6 +1,6 @@
 (*!tests!
 *
-* {"exception": "division by zero"}
+* {"exception": "Ocminus.Interp.DivisionByZero"}
 *
 *)
 

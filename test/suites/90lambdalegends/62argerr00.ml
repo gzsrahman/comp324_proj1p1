@@ -1,6 +1,6 @@
 (*!tests!
 *
-* {"exception": "too few arguments given"}
+* {"exception": "TypeError"}
 *
 *)
 let rec f x y = x + y ;;

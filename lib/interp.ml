@@ -11,6 +11,10 @@ exception UndefinedFunction of Ast.Id.t
  *)
 exception UnboundVariable of Ast.Id.t
 
+(* DivisionByZero x1 x2 is raised when x2 = 0
+ *)
+exception DivisionByZero
+
 (* TypeError s is raised when an operator or function is applied to operands
  * of the incorrect type.  s is any (hopefuly useful) message.
  *)
@@ -147,8 +151,12 @@ let rec eval
       | (Plus, V_Int n1, V_Int n2) -> V_Int (n1 + n2)
       | (Minus, V_Int n1, V_Int n2) -> V_Int (n1 - n2)
       | (Times, V_Int n1, V_Int n2) -> V_Int (n1 * n2)
-      | (Div, V_Int n1, V_Int n2) -> V_Int (n1 / n2)
-      | (Mod, V_Int n1, V_Int n2) -> V_Int (n1 mod n2)
+      | (Div, V_Int n1, V_Int n2) -> 
+        if n2 = 0 then raise DivisionByZero
+        else V_Int (n1 / n2)
+      | (Mod, V_Int n1, V_Int n2) ->
+        if n2 = 0 then raise DivisionByZero
+        else V_Int (n1 mod n2)
       | (And, V_Bool b1, V_Bool b2) -> V_Bool (b1 && b2)
       | (Or, V_Bool b1, V_Bool b2) -> V_Bool (b1 || b2)
       | (Eq, V_Int n1, V_Int n2) -> V_Bool (n1 = n2)
@@ -191,7 +199,11 @@ let rec eval
   (* and finally, we need function call coverage
    *)
   | Call (Var f, args) ->
-    let func = List.find (fun (Ast.Prog.FunDef (name, _, _)) -> name = f) pgm in
+    let func = 
+      try 
+        List.find (fun (Ast.Prog.FunDef (name, _, _)) -> name = f) pgm
+      with Not_found -> raise (UndefinedFunction f)
+    in
     (match func with
       | Ast.Prog.FunDef (_, params, body) ->
         if List.length params <> List.length args then
