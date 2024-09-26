@@ -3,4 +3,5 @@
  * { "output": ["false"] }
  *
  *)
-true = false ;;
+
+true && false ;;
