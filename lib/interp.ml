@@ -161,6 +161,8 @@ let rec eval
       | (Or, V_Bool b1, V_Bool b2) -> V_Bool (b1 || b2)
       | (Eq, V_Int n1, V_Int n2) -> V_Bool (n1 = n2)
       | (Ne, V_Int n1, V_Int n2) -> V_Bool (n1 <> n2)
+      | (Eq, V_Bool b1, V_Bool b2) -> V_Bool (b1 = b2)
+      | (Ne, V_Bool b1, V_Bool b2) -> V_Bool (b1 <> b2)
       | (Lt, V_Int n1, V_Int n2) -> V_Bool (n1 < n2)
       | (Le, V_Int n1, V_Int n2) -> V_Bool (n1 <= n2)
       | (Gt, V_Int n1, V_Int n2) -> V_Bool (n1 > n2)
